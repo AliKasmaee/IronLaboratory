@@ -1,0 +1,30 @@
+﻿<Window x:Class="IronLaboratory.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IronLaboratory"
+        mc:Ignorable="d"
+        Title="MainWindow" SizeToContent="Manual" WindowState="Maximized" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+
+    <Grid FlowDirection="RightToLeft">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/BackGround.jpg"/>
+        </Grid.Background>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+
+            <!--Body Panel-->
+            <Frame Grid.Row="0" x:Name="Frame" Height="768" Width="1366" Content="Frame#1" NavigationUIVisibility="Hidden"/>
+
+            <!--Footer Panel-->
+            <Border Grid.Row="1" FlowDirection="LeftToRight" Background="#0F0F2D">
+                <TextBlock Text="© 2022 RATA Company. All Rights Reserved." HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="WhiteSmoke" Margin="5,0,0,0"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

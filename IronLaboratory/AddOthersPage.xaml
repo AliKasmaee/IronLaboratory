@@ -1,0 +1,135 @@
+﻿<Page x:Class="IronLaboratory.AddOthersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IronLaboratory"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="AddOthersPage" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <Style x:Key="NewCellStyle" TargetType="telerik:GridViewCell" BasedOn="{StaticResource {x:Type telerik:GridViewCell}}">
+            <Setter Property="FontFamily" Value="{StaticResource Verdana}"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid FlowDirection="RightToLeft">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Header Panel-->
+        <Border Grid.Row="0" Padding="10">
+            <Grid>
+                <Label
+                    Content="نمونه های متفرقه" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="28"
+                    FontWeight="Bold" FontFamily="{StaticResource B Nazanin}" Foreground="WhiteSmoke"/>
+                <Button
+                    x:Name="BackButton" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Height="40" Width="40"
+                    IsCancel="True" Click="BackButton_Click">
+                    <Image Source="Images/back.png"/>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!--Body Panel-->
+        <Grid Grid.Row="1" Margin="0,20,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Width="650" Background="WhiteSmoke">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Label Grid.Row="0" Content="ثبت در سیستم" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" FontSize="20" FontWeight="Bold" FontFamily="{StaticResource B Nazanin}" Margin="100,0,0,0" Padding="0"/>
+                <TextBox Grid.Row="0" x:Name="RegistrationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="30" MinWidth="150" FontSize="18" FontWeight="Bold" FontFamily="{StaticResource Verdana}"/>
+
+                <Label Grid.Row="1" Content="نام ماده" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" FontSize="20" FontWeight="Bold" FontFamily="{StaticResource B Nazanin}" Margin="100,0,0,0" Padding="0"/>
+                <TextBox Grid.Row="1" x:Name="MaterialTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="30" MinWidth="150" FontSize="18" FontWeight="Bold" FontFamily="{StaticResource B Yekan}"/>
+
+                <Label Grid.Row="2" Content="نوع آزمایش" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" FontSize="20" FontWeight="Bold" FontFamily="{StaticResource B Nazanin}" Margin="100,0,0,0" Padding="0"/>
+                <TextBox Grid.Row="2" x:Name="ExperimentTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="30" Width="150" FontSize="18" FontWeight="Bold" FontFamily="{StaticResource B Yekan}"/>
+
+                <Label Grid.Row="3" Content="ساعت" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" FontSize="20" FontWeight="Bold" FontFamily="{StaticResource B Nazanin}" Margin="100,0,0,0" Padding="0"/>
+                <TextBox Grid.Row="3" x:Name="ClockTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="30" Width="150" FontSize="18" FontWeight="Bold" FontFamily="{StaticResource B Nazanin}"/>
+
+                <Label Grid.Row="4" Content="تاریخ" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" FontSize="20" FontWeight="Bold" FontFamily="{StaticResource B Nazanin}" Margin="100,0,0,0" Padding="0"/>
+                <telerik:RadDateTimePicker Grid.Row="4" x:Name="RadOnDate" Width="150" InputMode="DatePicker" VerticalAlignment="Center" HorizontalAlignment="Center" DateTimeWatermarkContent="تاریخ را وارد کنید" telerik:StyleManager.Theme="Windows8" OpenDropDownOnFocus="True"/>
+
+                <Label Grid.Row="5" Content="شماره سفارش" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" FontSize="20" FontWeight="Bold" FontFamily="{StaticResource B Nazanin}" Margin="100,0,0,0" Padding="0"/>
+                <TextBox Grid.Row="5" x:Name="OrderIdTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="30" MinWidth="150" FontSize="18" FontWeight="Bold" FontFamily="{StaticResource Verdana}"/>
+
+                <Label Grid.Row="6" Content="تعداد چاپ" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" FontSize="20" FontWeight="Bold" FontFamily="{StaticResource B Nazanin}" Margin="100,0,0,0" Padding="0"/>
+                <telerik:RadNumericUpDown Grid.Row="6" x:Name="NumberRad" FlowDirection="LeftToRight" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="50" FontSize="18" FontWeight="Bold" FontFamily="{StaticResource Verdana}" Value="1"/>
+
+                <Button Grid.Row="7" x:Name="AddTempButton" Content="افزودن به جدول" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Width="150" FontSize="20" FontFamily="{StaticResource B Nazanin}" FontWeight="Bold" Foreground="White" Background="#FE6584" Click="AddTempButton_Click"/>
+            </Grid>
+            
+            <telerik:RadGridView Grid.Row="1" Margin="0,20,0,0"
+                    x:Name="RadDataGrid" Width="1100" FlowDirection="RightToLeft"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                    CanUserSelect="True" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False"
+                    CanUserResizeRows="False" CanUserInsertRows="False" AutoGenerateColumns="False" ShowGroupPanel="False"
+                    SelectionUnit="FullRow" SelectionMode="Single" GroupRenderMode="Flat" IsFilteringAllowed="False"
+                    telerik:StyleManager.Theme="Windows8" Deleting="RadDataGrid_Deleting">
+
+                <telerik:RadGridView.Columns>
+
+                    <telerik:GridViewDataColumn
+                            Header="ثبت در سیستم" Width="*" DataMemberBinding="{Binding Registration}"
+                            CellStyle="{StaticResource NewCellStyle}" IsReadOnly="True"/>
+
+                    <telerik:GridViewDataColumn
+                            Header="نام ماده" Width="Auto"
+                            DataMemberBinding="{Binding Material}" IsReadOnly="True"/>
+
+                    <telerik:GridViewDataColumn
+                            Header="نوع آزمایش" Width="120"
+                            DataMemberBinding="{Binding Experiment}" IsReadOnly="True"/>
+
+                    <telerik:GridViewDataColumn
+                            Header="ساعت" Width="100"
+                            DataMemberBinding="{Binding Clock}" IsReadOnly="True"/>
+
+                    <telerik:GridViewDataColumn
+                            Header="تاریخ" Width="120"
+                            DataMemberBinding="{Binding OnDate}" IsReadOnly="True"/>
+
+                    <telerik:GridViewDataColumn
+                            Header="شماره سفارش" Width="*" DataMemberBinding="{Binding OrderId}"
+                            CellStyle="{StaticResource NewCellStyle}" IsReadOnly="True"/>
+
+                    <telerik:GridViewDataColumn
+                            Header="تعداد چاپ" Width="90"
+                            DataMemberBinding="{Binding Number}" IsReadOnly="True"/>
+
+                </telerik:RadGridView.Columns>
+
+            </telerik:RadGridView>
+
+        </Grid>
+
+        <!--Footer Panel-->
+        <Border Grid.Row="2" Padding="10">
+            <Button
+                x:Name="AddButton" Content="افزودن" Style="{StaticResource ButtonsStyle}" Margin="0,0,0,5"
+                Click="AddButton_Click"/>
+        </Border>
+        
+    </Grid>
+    
+</Page>
